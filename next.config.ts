@@ -1,10 +1,9 @@
 /**
  * @type {import('next').NextConfig}
  */
-const isProduction = process.env.NODE_ENV === "production";
+// const isProduction = process.env.NODE_ENV === "production";
 
 const nextConfig = {
-  basePath: isProduction? "/foodapp":'',
   output: "export",
   distDir: "dist",
   images: {

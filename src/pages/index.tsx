@@ -1,7 +1,7 @@
-import CustomCard from "@/components/CustomCard";
-import CustomCartList from "@/components/CustomCartList";
-import CustomModal from "@/components/CustomModel";
-import Data from "@/data/data.json";
+import CustomCard from "../components/CustomCard";
+import CustomCartList from "../components/CustomCartList";
+import CustomModal from "../components/CustomModel";
+import Data from "../data/data.json";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 
