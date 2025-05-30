@@ -1,11 +1,12 @@
 /**
  * @type {import('next').NextConfig}
  */
-// const isProduction = process.env.NODE_ENV === "production";
+const isGithubPages = process.env.NODE_ENV === "production";
 
 const nextConfig = {
   output: "export",
-  
+  basePath: isGithubPages ? "/foodapp" : "",
+  assetPrefix: isGithubPages ? "/foodapp/" : "",
   distDir: "dist",
   images: {
     unoptimized: true, // Disable image optimization for static export
