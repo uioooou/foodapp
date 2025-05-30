@@ -5,6 +5,7 @@
 
 const nextConfig = {
   output: "export",
+  
   distDir: "dist",
   images: {
     unoptimized: true, // Disable image optimization for static export
