@@ -4,7 +4,6 @@
 // const isGithubPages = process.env.NODE_ENV === "production";
 
 const nextConfig = {
-  output: "export",
   // basePath: isGithubPages ? "/foodapp" : "localhost",
   // assetPrefix: isGithubPages ? "/foodapp/" : "localhost",
   distDir: "dist",
