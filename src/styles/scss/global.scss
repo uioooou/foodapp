@@ -1,0 +1,257 @@
+@use "_variables" as *;
+
+* {
+  user-select: none; // Prevents text selection
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+:root {
+  --background: #{$rose-300};
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #{$rose-300};
+    --foreground: #ededed;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "RedHatText", sans-serif;
+  background-color: var(--background);
+  color: #343a40;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 65% 30%;
+  justify-content: space-between;
+  row-gap: 2rem;
+  gap: 1rem;
+  padding: 3rem;
+  background-color: $white;
+  align-items: baseline; //
+  box-shadow: 0px 20px 100px rgba(0, 0, 0, 0.573);
+}
+
+.dessert-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media screen and (max-width: 1080px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .dessert-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .dessert-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0;
+    gap: 1rem;
+  }
+}
+
+.card-component {
+  grid-column: span 1;
+  position: relative;
+  font-size: small;
+}
+
+.card-image-wrapper {
+  position: relative;
+}
+
+.card-img {
+  position: relative;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 8px; /* optional */
+  border: 3px solid $red;
+  transition: 0.1s ease-in-out;
+}
+
+@media screen and (max-width: 470px) {
+  .card-img {
+    aspect-ratio: 3/2;
+  }
+}
+
+.card-img.inactive {
+  border: 3px solid $white;
+}
+
+.button-container {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  transform: translate(0px, 50%);
+  bottom: 0;
+
+  & > div {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+  }
+}
+
+.card-button {
+  margin: auto;
+  display: flex;
+  padding: 0.6rem 0.2rem;
+  text-align: center;
+  border: 1px solid $red;
+  background-color: $red;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.cart-button {
+  padding: 0.6rem 0.2rem;
+  text-align: center;
+  border: none;
+  background-color: $red;
+  width: 100%;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $red-dark;
+  }
+}
+
+.cart-item-info {
+  display: flex;
+
+  & > p {
+    font-size: small;
+    margin: 0;
+    margin-right: 1rem;
+  }
+
+  & > .item-number {
+    font-weight: 400;
+    color: $red;
+  }
+  & > .item-price {
+    color: $rose-300;
+  }
+}
+
+.cart-item-container {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  align-items: center;
+}
+
+.cart-total {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.card-info {
+  margin-top: 1.5rem;
+
+  & > h4,
+  p {
+    margin: 0;
+  }
+
+  & > .category {
+    font-size: small;
+    font-weight: 400;
+  }
+  & > .price {
+    color: $red;
+    font-weight: 700;
+  }
+}
+
+.font-small {
+  font-size: small;
+}
+.font-red {
+  color: $red;
+}
+.margin-0 {
+  margin: 0;
+}
+
+.card-button.inactive {
+  background-color: $white;
+  color: $black;
+  justify-content: center;
+  gap: 0.5rem; // optional spacing between quantity and icons
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.color-rose {
+  color: $rose-300;
+}
+
+.cart-content {
+  height: 500px;
+  max-width: 400px;
+}
+
+.modal {
+  --bs-modal-width: 500px;
+}
+.cart-modal-content {
+  max-height: 400px;
+}
+
+@media screen and (max-width: 400px) {
+.cart-modal-content {
+  max-height: 200px;
+}
+  
+}
+@media screen and (max-width: 450px) {
+  .modal-dialog {
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    max-height: 100%;
+    width: 100%;
+    max-width: none; /* optional */
+  }
+}
