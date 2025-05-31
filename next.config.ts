@@ -1,23 +1,10 @@
-/**
- * @type {import('next').NextConfig}
- */
-// const isGithubPages = process.env.NODE_ENV === "production";
+
 
 const nextConfig = {
-  // basePath: isGithubPages ? "/foodapp" : "localhost",
-  // assetPrefix: isGithubPages ? "/foodapp/" : "localhost",
-  distDir: "dist",
+  output: "export",
   images: {
-    unoptimized: true, // Disable image optimization for static export
+    unoptimized: true,
   },
-  // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
-  // trailingSlash: true,
-
-  // Optional: Prevent automatic `/me` -> `/me/`, instead preserve `href`
-  // skipTrailingSlashRedirect: true,
-
-  // Optional: Change the output directory `out` -> `dist`
-  // distDir: 'dist',
 };
 
 module.exports = nextConfig;
